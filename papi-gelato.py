@@ -1,3 +1,6 @@
+from typing import Hashable
+
+
 bolprijs = 1.10
 hoornprijs = 1.25
 bakprijs = 0.75
@@ -15,6 +18,9 @@ def start():
 
 def ask():
     
+    global bolprijs
+    global hoornprijs
+    global bakprijs
     meerbol = 0
     bol = int(input('hoeveel bolletjes '))
     while bol > 0:
@@ -51,7 +57,8 @@ def ask():
             AantalB = meerbol + AantalB
             print(AantalB)
             print("Bedankt en tot ziens")
-            bon = bonnetje(AantalB)
+            bon = bonnetje(AantalB )
+            print
             break
 
 
@@ -76,7 +83,7 @@ def BakjeOfHoorn(AantalB):
             BakAantal + 1
             HB = "bakje"
             print("hier sijn je ",AantalB," in je ",HB)
-        return HB
+        return HB,HoornAantal,BakAantal
 
 def welkesmaak(AantalB):
     for i in range(AantalB):
@@ -101,13 +108,15 @@ def welkesmaak(AantalB):
           
 
 
-def bonnetje(HoornAantal,AantalB,bakaantal):
-    global hoornprijs,bakprijs,bolprijs
+def bonnetje(HoornAantal,AantalB,BakAantal):
+    global hoornprijs 
+    global bakprijs
+    global bolprijs
     print("[PAPI Gelatto]--------------------------------")
     space()
-    print(AantalB,"x",bolprijs,"=", (bolprijs *AantalB))
+    print(AantalB,"x",bolprijs,"=", (bolprijs * AantalB))
     space()
-    print(HoornAantal,"x",hoornprijs,"=",(HoornAantal*hoornprijs))
+    print(HoornAantal,"x",hoornprijs,"=",())
 
 
 
